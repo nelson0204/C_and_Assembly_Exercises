@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "asm.h"
 
-short num = 0xfffe;
+short num = -1;
 
 int main(void)
 {

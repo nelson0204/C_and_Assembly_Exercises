@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "asm.h"
 
-char current = 5;
-char desired = 55;
+char current = 0;
+char desired = 10;
 
 int main(void)
 {
-    short result = needed_time();
+    int result = needed_time();
 
     printf("Result = %hd", result);
 
