@@ -13,18 +13,18 @@ max:
         movq %rsp, %rbp
     #-- /PROLOGUE --
 
-    movl $0, %eax       # limpa retorno função
+    movl $0, %eax       # Limpa retorno função
 
-    cmpl %esi, %edi     # compara se [vi < vi+1]
-    jl second              # se [vi] menor ou igual a [vi+1] jump end
+    cmpl %esi, %edi     # Compara se [vi < vi+1]
+    jl second           # Se [vi] menor ou igual a [vi+1] jump end
 
-    jmp end
+    jmp end             # Jump para o end e nao incrementa valor em %eax
 
 second:
-    cmpl %edx, %esi     # compara se [vi+1 > vi+2]
-    jg increment             # compara se [vi+1] menor ou igual a [vi+2] jump end
+    cmpl %edx, %esi     # Compara se [vi+1 > vi+2]
+    jg increment        # Compara se [vi+1] menor ou igual a [vi+2] jump end
 
-    jmp end
+    jmp end             # Jump para o end e nao incrementa valor em %eax
 
 increment:
     incl %eax

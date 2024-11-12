@@ -11,19 +11,21 @@ max:
         movq %rsp, %rbp
     #-- /PROLOGUE --
 
-    movl $0, %eax
+    movl $0, %eax       # limpa registo de retorno
 
-    cmpl %esi, %edi
-    jg next
-    jmp end
+    cmpl %esi, %edi     # compara se [a > b]
+    jg next             # se [a] for maior do que b vai para a proxima comparação
+
+    jmp end             # se [a] form menor vai diretamente para o final sem alterar o retorno que é 0
 
 next:
-    cmpl %edx, %edi
-    jg increment
-    jmp end
+    cmpl %edx, %edi    # compara se [a > c]
+    jg increment       # se [a] for maior do que c vai para a proxima intrução e incrementa o valor de retorno para 1
+
+    jmp end            # se [a] form menor vai diretamente para o final sem alterar o retorno que é 0
 
 increment:
-    incl %eax
+    incl %eax          # Incrementa 1 em %eax que é o retorno da função
 
 
 end:
